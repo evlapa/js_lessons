@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button>click</button>
+
+    <script>
+    
+    let input = document.querySelector('input');
+    let button = document.querySelector('button');
+
+    button.addEventListener('click', function() {
+        let symbols = input.value.split('');
+        let newArr = [];
+        while (symbols.length) {
+            let char = Math.floor(Math.random() * symbols.length);
+            newArr.push(symbols[char]);
+            symbols = symbols.filter(function(elem) {
+                
+            })
+        }
+    });
+
+    decButton.addEventListener('click', function() {
+        if (+input.value) {
+            input.value--;
+        } else {
+            console.log('Cart is empty');
+        }
+    });
+
+    </script>
+</body>
+
+</html>
