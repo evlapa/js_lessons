@@ -13,29 +13,32 @@
     <button>click</button>
 
     <script>
-    
-    let input = document.querySelector('input');
-    let button = document.querySelector('button');
 
-    button.addEventListener('click', function() {
-        let symbols = input.value.split('');
-        let newArr = [];
-        while (symbols.length) {
+        let input = document.querySelector('input');
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function () {
+            let symbols = input.value.split('');
+            let resultArr = [];
+            let restArr = [];
             let char = Math.floor(Math.random() * symbols.length);
-            newArr.push(symbols[char]);
-            symbols = symbols.filter(function(elem) {
-                
-            })
-        }
-    });
+            console.log(char);
+            console.log(symbols.length);
+            for (let i = 0; i < symbols.length; i++) {
+                if (i !== char) {
+                    restArr.push(symbols[i]);
+                    console.log(restArr);
+                } else {
+                    resultArr.push(symbols[char]);
+                    console.log(resultArr);
+                }
+            }
+            symbols = restArr;
+            restArr = [];
+            console.log(symbols.length);
 
-    decButton.addEventListener('click', function() {
-        if (+input.value) {
-            input.value--;
-        } else {
-            console.log('Cart is empty');
-        }
-    });
+            input.value = resultArr.join('');
+        });
 
     </script>
 </body>
