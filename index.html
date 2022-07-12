@@ -10,36 +10,25 @@
 
 <body>
     <input type="text">
-    <button>click</button>
-
+    <p></p>
+    
     <script>
 
         let input = document.querySelector('input');
-        let button = document.querySelector('button');
+        let parag = document.querySelector('p');
+        let maxNumber = 5;
+        let remainedNumber = maxNumber;
+        parag.innerHTML = 'Оставшееся кол-во символов: ' + remainedNumber;
 
-        button.addEventListener('click', function () {
-            let symbols = input.value.split('');
-            let resultArr = [];
-            let restArr = [];
-            let char = Math.floor(Math.random() * symbols.length);
-            console.log(char);
-            console.log(symbols.length);
-            for (let i = 0; i < symbols.length; i++) {
-                if (i !== char) {
-                    restArr.push(symbols[i]);
-                    console.log(restArr);
-                } else {
-                    resultArr.push(symbols[char]);
-                    console.log(resultArr);
-                }
+        input.addEventListener('input', function() {
+            if (maxNumber - input.value.length > 0) {
+                parag.innerHTML = 'Оставшееся кол-во символов: ' + (maxNumber - input.value.length);  
+                console.log(input.value.length);
+            } else {
+                parag.innerHTML = 'Размер текста превышен на ' + (input.value.length - maxNumber) + 'символ/а/ов.'
+                console.log(input.value.length);
             }
-            symbols = restArr;
-            restArr = [];
-            console.log(symbols.length);
-
-            input.value = resultArr.join('');
         });
-
     </script>
 </body>
 
