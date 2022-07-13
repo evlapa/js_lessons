@@ -10,13 +10,12 @@
 
 <body>
     <select id="select">
-
     </select>
-    <p></p>
+    <input type="text">
 
     <script>
+        let input = document.querySelector('input');
         let select = document.querySelector('#select');
-        let parag = document.querySelector('p');
         let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
         for (let i = 0; i <= 11; i++) {
@@ -26,8 +25,9 @@
             select.appendChild(option);
         }
 
-        let date = new Date();
-        select.value = date.getMonth();
+        input.addEventListener('blur', function() {
+            select.selectedIndex = +input.value;
+        });
 
     </script>
 </body>
