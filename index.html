@@ -9,27 +9,20 @@
 </head>
 
 <body>
-    <input type="text">
-    <p></p>
-    
-    <script>
+	<input id="input1" type="text">
+	<input id="input2" type="text">
 
-        let input = document.querySelector('input');
-        let parag = document.querySelector('p');
-        let maxNumber = 5;
-        let remainedNumber = maxNumber;
-        parag.innerHTML = 'Оставшееся кол-во символов: ' + remainedNumber;
+	<script>
+		let input1 = document.querySelector('#input1');
+		let input2 = document.querySelector('#input2');
 
-        input.addEventListener('input', function() {
-            if (maxNumber - input.value.length > 0) {
-                parag.innerHTML = 'Оставшееся кол-во символов: ' + (maxNumber - input.value.length);  
-                console.log(input.value.length);
-            } else {
-                parag.innerHTML = 'Размер текста превышен на ' + (input.value.length - maxNumber) + 'символ/а/ов.'
-                console.log(input.value.length);
-            }
-        });
-    </script>
+		input1.addEventListener('input', function() {
+			if (input1.value.length == 2) {
+				input2.focus();
+			}
+		})
+	</script>
 </body>
+
 
 </html>
