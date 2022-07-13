@@ -17,22 +17,17 @@
     <script>
         let select = document.querySelector('#select');
         let parag = document.querySelector('p');
-        let week = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
+        let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-        for (let i = 1; i <= 7; i++) {
+        for (let i = 0; i <= 11; i++) {
             let option = document.createElement('option');
             option.value = i;
-            option.innerHTML = week[i - 1];
+            option.innerHTML = months[i];
             select.appendChild(option);
         }
 
-        select.addEventListener('change', function () {
-            if (select.value == 6 || select.value == 7) {
-                console.log('Это выходной');
-            } else {
-                console.log('Это рабочий день');
-            }
-        });
+        let date = new Date();
+        select.value = date.getMonth();
 
     </script>
 </body>
