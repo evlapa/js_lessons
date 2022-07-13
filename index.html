@@ -9,19 +9,40 @@
 </head>
 
 <body>
-	<input id="input1" type="text">
-	<input id="input2" type="text">
+    <select id="select">
 
-	<script>
-		let input1 = document.querySelector('#input1');
-		let input2 = document.querySelector('#input2');
+    </select>
+    <p></p>
 
-		input1.addEventListener('input', function() {
-			if (input1.value.length == 2) {
-				input2.focus();
-			}
-		})
-	</script>
+    <script>
+        let select = document.querySelector('#select');
+        let parag = document.querySelector('p');
+
+        for (let i = 1900; i <= 2020; i++) {
+            let option = document.createElement('option');
+            option.value = i;
+            option.innerHTML = i;
+            select.appendChild(option);
+        }
+
+        select.addEventListener('change', function () {
+            let year = select.value;
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        console.log('Високосный год');
+                    } else {
+                        console.log('Год не високосный');
+                    }
+                } else {
+                    console.log('Год високосный');
+                }
+            } else {
+                console.log('Год не високосный');
+            }
+        });
+
+    </script>
 </body>
 
 
