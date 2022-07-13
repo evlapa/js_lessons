@@ -17,28 +17,20 @@
     <script>
         let select = document.querySelector('#select');
         let parag = document.querySelector('p');
+        let week = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
 
-        for (let i = 1900; i <= 2020; i++) {
+        for (let i = 1; i <= 7; i++) {
             let option = document.createElement('option');
             option.value = i;
-            option.innerHTML = i;
+            option.innerHTML = week[i - 1];
             select.appendChild(option);
         }
 
         select.addEventListener('change', function () {
-            let year = select.value;
-            if (year % 4 == 0) {
-                if (year % 100 == 0) {
-                    if (year % 400 == 0) {
-                        console.log('Високосный год');
-                    } else {
-                        console.log('Год не високосный');
-                    }
-                } else {
-                    console.log('Год високосный');
-                }
+            if (select.value == 6 || select.value == 7) {
+                console.log('Это выходной');
             } else {
-                console.log('Год не високосный');
+                console.log('Это рабочий день');
             }
         });
 
