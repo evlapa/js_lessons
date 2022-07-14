@@ -6,44 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        ul {
-	padding: 30px;
-	border: 1px solid red;
-}
-li {
-	list-style-type: none;
-	margin-bottom: 20px;
-	border: 1px dashed black;
-}
-    </style>
 </head>
 
 <body>
     
-    <ul id="elem">
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-    </ul>
+    
+    <input type="text">
+    <p></p>
 
     <script>
-        let list = document.querySelector('#elem');
+        let input = document.querySelector('input');
+        let parag = document.querySelector('p');
 
-        list.addEventListener('click', func);
+        input.addEventListener('keydown', func);
 
         function func(event) {
-            let target = event.target;
-            console.log(target.tagName);
-            if (target.tagName == 'LI') {
-                target.innerHTML += '!';
-            } else {
-                let li = document.createElement('li');
-                list.appendChild(li);
-                li.innerHTML = 'text';
-            }
+            //console.log(event);
+            let key = event.code;
+            if (key == 'Enter') {
+                parag.innerHTML = input.value;
+                input.value = '';
+            } 
         }
     </script>
 </body>
