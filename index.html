@@ -9,26 +9,24 @@
 </head>
 
 <body>
-    <select id="select">
-    </select>
-    <input type="text">
+    <button id="elem">text</button>
+
+
+
 
     <script>
-        let input = document.querySelector('input');
-        let select = document.querySelector('#select');
-        let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        let elem = document.querySelector('#elem');
 
-        for (let i = 0; i <= 11; i++) {
-            let option = document.createElement('option');
-            option.value = i;
-            option.innerHTML = months[i];
-            select.appendChild(option);
+        elem.addEventListener('click', func);
+        elem.addEventListener('dblclick', func);
+
+        function func(event) {
+            if (event.type == 'click') {
+                elem.style.backgroundColor = 'green';
+            } else if (event.type == 'dblclick') {
+                elem.style.backgroundColor = 'red';
+            }
         }
-
-        input.addEventListener('blur', function() {
-            select.selectedIndex = +input.value;
-        });
-
     </script>
 </body>
 
