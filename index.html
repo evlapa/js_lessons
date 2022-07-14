@@ -6,25 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        ul {
+	padding: 30px;
+	border: 1px solid red;
+}
+li {
+	list-style-type: none;
+	margin-bottom: 20px;
+	border: 1px dashed black;
+}
+    </style>
 </head>
 
 <body>
-    <button id="elem">text</button>
-
-
-
+    
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
 
     <script>
-        let elem = document.querySelector('#elem');
+        let list = document.querySelector('#elem');
 
-        elem.addEventListener('click', func);
-        elem.addEventListener('dblclick', func);
+        list.addEventListener('click', func);
 
         function func(event) {
-            if (event.type == 'click') {
-                elem.style.backgroundColor = 'green';
-            } else if (event.type == 'dblclick') {
-                elem.style.backgroundColor = 'red';
+            let target = event.target;
+            console.log(target.tagName);
+            if (target.tagName == 'LI') {
+                target.innerHTML += '!';
+            } else {
+                let li = document.createElement('li');
+                list.appendChild(li);
+                li.innerHTML = 'text';
             }
         }
     </script>
