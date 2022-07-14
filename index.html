@@ -10,22 +10,16 @@
 
 <body>
     
-    
     <input type="text">
-    <p></p>
 
     <script>
         let input = document.querySelector('input');
-        let parag = document.querySelector('p');
 
-        input.addEventListener('keydown', func);
+        input.addEventListener('click', func);
 
         function func(event) {
-            //console.log(event);
-            let key = event.code;
-            if (key == 'Enter') {
-                parag.innerHTML = input.value;
-                input.value = '';
+            if (event.altKey) {
+                input.style.backgroundColor = 'pink';
             } 
         }
     </script>
