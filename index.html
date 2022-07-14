@@ -9,32 +9,20 @@
 </head>
 
 <body>
-    
-    <ul id="elem">
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-    </ul>
+
+    <a href="https://www.garnstudio.com">Link 1 </a><a href="https://ya.ru">Link 2 </a><a href="https://google.com">Link 3 </a><a href="https://mail.ru">Link 4 </a>
 
     <script>
-        let list = document.querySelector('#elem');
-        let lines = list.children;
-        console.log(lines);
+       let links = document.querySelectorAll('a');
 
-        for (let li of lines) {
-            li.addEventListener('click', func)
-        }
+       for (let link of links) {
+        link.addEventListener('click', func);
+       }
 
-        function func(event) {
-            if (event.ctrlKey) {
-                this.innerHTML += 1;
-            } 
-            if (event.shiftKey) {
-                this.innerHTML += 2;
-            }
-        } 
+       function func(event) {
+        event.preventDefault();
+        this.innerHTML += this.href;
+       }
     </script>
 </body>
 
