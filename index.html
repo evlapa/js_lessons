@@ -10,18 +10,31 @@
 
 <body>
     
-    <input type="text">
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
 
     <script>
-        let input = document.querySelector('input');
+        let list = document.querySelector('#elem');
+        let lines = list.children;
+        console.log(lines);
 
-        input.addEventListener('click', func);
+        for (let li of lines) {
+            li.addEventListener('click', func)
+        }
 
         function func(event) {
-            if (event.altKey) {
-                input.style.backgroundColor = 'pink';
+            if (event.ctrlKey) {
+                this.innerHTML += 1;
             } 
-        }
+            if (event.shiftKey) {
+                this.innerHTML += 2;
+            }
+        } 
     </script>
 </body>
 
