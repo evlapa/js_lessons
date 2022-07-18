@@ -6,25 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 </head>
 
 <body>
-    <input id="elem" value="3">
-   
+    <input id="elem1" value="text1">
+    <input id="elem2" value="text2">
+    <input id="elem3" value="text3">
+
     <script>
-      "use strict";
+        function func() {
+            console.log(this.value);
+        }
 
-      let elem = document.querySelector('#elem');
-elem.addEventListener('blur', func);
+        let elems = document.querySelectorAll('input');
 
-function func() {
-
-    let square = () => {
-        return this.value * this.value;
-    }
-    alert(square());
-}
+        for (let elem of elems) {
+            func.call(elem);
+        }
     </script>
 </body>
 
