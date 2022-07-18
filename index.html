@@ -6,47 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #block {
-            display: none;
-        }
-
-        #parent {
-            width: 150px;
-            height: 150px;
-            background-color: #552eea;
-        }
-    </style>
+    
 </head>
 
 <body>
 
-    <div id="parent">
-        <button>click me</button>
-        <div id="block">
-            text
-        </div>
-    </div>
-
+   <ul>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+   </ul>
+   <button>click me</button>
     <script>
-        let div = document.querySelector('#parent');
-        let button = document.querySelector('button');
-        let innerDiv = document.querySelector('#block');
+       let list = document.querySelector('ul');
+       let items = list.querySelectorAll('li');
+       let button = document.querySelector('button');
 
-        button.addEventListener('click', func1);
-        innerDiv.addEventListener('click', func2);
-        div.addEventListener('click', func2);
+       button.addEventListener('click', func);
+       list.addEventListener('click', func2)
 
-        function func1(event) {
-            innerDiv.style.display = 'block';
-            event.stopImmediatePropagation();
-        }
+       function func() {
+        let item = document.createElement('li');
+        item.innerHTML = 'item';
+        list.appendChild(item);
+       }
 
-        function func2() {
-            if (innerDiv.style.display === 'block') {
-                innerDiv.style.display = 'none';
-            }
-        }
+       function func2(event) {
+        event.target.innerHTML += '!';
+       }
     </script>
 </body>
 
