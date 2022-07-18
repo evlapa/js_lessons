@@ -10,36 +10,21 @@
 </head>
 
 <body>
-
-   <ul>
-    <li>item <i>italic</i> item</li>
-	<li>item <i>italic</i> item</li>
-	<li>item <i>italic</i> item</li>
-	<li>item <i>italic</i> item</li>
-	<li>item <i>italic</i> item</li>
-   </ul>
-   <button>click me</button>
+    <input id="elem" value="3">
+   
     <script>
-       let list = document.querySelector('ul');
-       let items = list.querySelectorAll('li');
-       let button = document.querySelector('button');
+      "use strict";
 
-       button.addEventListener('click', func);
-       list.addEventListener('click', func2)
+      let elem = document.querySelector('#elem');
+elem.addEventListener('blur', func);
 
-       function func() {
-        let item = document.createElement('li');
-        item.innerHTML = 'item';
-        list.appendChild(item);
-       }
-
-       function func2(event) {
-        let li = event.target.closest('li');
-        if (li) {
-            li.innerHTML += '!';
-        }
-        
-       }
+function func() {
+	alert( square(this) );
+	
+	function square(self) {
+		return self.value * self.value;
+	}
+}
     </script>
 </body>
 
