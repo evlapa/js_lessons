@@ -19,11 +19,11 @@
 elem.addEventListener('blur', func);
 
 function func() {
-	alert( square(this) );
-	
-	function square(self) {
-		return self.value * self.value;
-	}
+
+    let square = () => {
+        return this.value * this.value;
+    }
+    alert(square());
 }
     </script>
 </body>
