@@ -12,11 +12,11 @@
 <body>
 
    <ul>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
-    <li>item</li>
+    <li>item <i>italic</i> item</li>
+	<li>item <i>italic</i> item</li>
+	<li>item <i>italic</i> item</li>
+	<li>item <i>italic</i> item</li>
+	<li>item <i>italic</i> item</li>
    </ul>
    <button>click me</button>
     <script>
@@ -34,7 +34,11 @@
        }
 
        function func2(event) {
-        event.target.innerHTML += '!';
+        let li = event.target.closest('li');
+        if (li) {
+            li.innerHTML += '!';
+        }
+        
        }
     </script>
 </body>
