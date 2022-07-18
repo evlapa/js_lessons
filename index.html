@@ -20,7 +20,9 @@
                 + ' ' + name);
         }
 
-        func.apply(elem, ['Ivanov', 'Ivan']); 
+        func = func.bind(elem); 
+        func('Ivanov', 'Ivan');
+        func('Petrov', 'Petr');
     </script>
 </body>
 
