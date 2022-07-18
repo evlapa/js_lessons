@@ -10,18 +10,22 @@
 </head>
 
 <body>
-
+<button>start timer</button>
 
     <script>
-        let some = 10;
+        let button = document.querySelector('button');
+        button.addEventListener('click', func);
+
+        function func() {
+            this.removeEventListener('click', func);
+            let some = 100;
         let timerID = setInterval(function () {
             console.log(some--);
             if (some < 0) {
                 clearInterval(timerID);
             }
         }, 1000);
-
-
+        }
     </script>
 </body>
 
