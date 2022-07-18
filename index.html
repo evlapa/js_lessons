@@ -10,13 +10,18 @@
 </head>
 
 <body>
-   
+
 
     <script>
-        let some = 100;
-       setInterval(function() {
-        console.log(some--);
-       }, 1000);
+        let some = 10;
+        let timerID = setInterval(function () {
+            console.log(some--);
+            if (some < 0) {
+                clearInterval(timerID);
+            }
+        }, 1000);
+
+
     </script>
 </body>
 
