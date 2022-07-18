@@ -10,20 +10,17 @@
 </head>
 
 <body>
-    <input id="elem1" value="text1">
-    <input id="elem2" value="text2">
-    <input id="elem3" value="text3">
+    <input id="elem" value="привет">
 
     <script>
-        function func() {
-            console.log(this.value);
+        let elem = document.querySelector('#elem');
+
+        function func(surname, name) {
+            console.log(this.value + ', ' + surname
+                + ' ' + name);
         }
 
-        let elems = document.querySelectorAll('input');
-
-        for (let elem of elems) {
-            func.call(elem);
-        }
+        func.call(elem, 'Ivanov', 'Ivan'); 
     </script>
 </body>
 
