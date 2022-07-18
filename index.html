@@ -6,23 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #block {
+            display: none;
+        }
+
+        #parent {
+            width: 150px;
+            height: 150px;
+            background-color: #552eea;
+        }
+    </style>
 </head>
 
 <body>
 
-    <a href="https://www.garnstudio.com">Link 1 </a><a href="https://ya.ru">Link 2 </a><a href="https://google.com">Link 3 </a><a href="https://mail.ru">Link 4 </a>
+    <div id="parent">
+        <button>click me</button>
+        <div id="block">
+            text
+        </div>
+    </div>
 
     <script>
-       let links = document.querySelectorAll('a');
+        let div = document.querySelector('#parent');
+        let button = document.querySelector('button');
+        let innerDiv = document.querySelector('#block');
 
-       for (let link of links) {
-        link.addEventListener('click', func);
-       }
+        button.addEventListener('click', func1);
+        innerDiv.addEventListener('click', func2);
+        div.addEventListener('click', func2);
 
-       function func(event) {
-        event.preventDefault();
-        this.innerHTML += this.href;
-       }
+        function func1(event) {
+            innerDiv.style.display = 'block';
+            event.stopImmediatePropagation();
+        }
+
+        function func2() {
+            if (innerDiv.style.display === 'block') {
+                innerDiv.style.display = 'none';
+            }
+        }
     </script>
 </body>
 
