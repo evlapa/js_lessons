@@ -19,6 +19,9 @@
 
         function func() {
             +start.value--;
+            if (+start.value == 0) {
+                clearInterval(timerID);
+            }
         }
     </script>
 </body>
