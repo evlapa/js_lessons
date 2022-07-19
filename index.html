@@ -16,17 +16,20 @@
     <script>
         let start = document.querySelector('#start');
         let stop = document.querySelector('#stop');
+
         let timerId;
 
         function func() {
             start.removeEventListener('click', func);
             timerId = setInterval(function () {
-                let date = new Date;
+                let date = new Date();
                 console.log(date.getMinutes() + ' ' +
                     date.getSeconds());
-            }, 1000)
+            }, 1000);
         }
+
         start.addEventListener('click', func);
+
         stop.addEventListener('click', function () {
             start.addEventListener('click', func);
             clearInterval(timerId);
