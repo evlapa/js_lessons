@@ -10,19 +10,17 @@
 </head>
 
 <body>
-    <input type="text" id="start" value="10">
-    
+    <input type="button" id="elem" value="10">
+
 
     <script>
-        let start = document.querySelector('#start');
-        let timerID = setInterval(func, 1000);
+        let elem = document.querySelector('#elem');
 
-        function func() {
-            +start.value--;
-            if (+start.value == 0) {
-                clearInterval(timerID);
-            }
-        }
+        elem.addEventListener('click', function () {
+            setInterval(function (param) {
+                param.value--;
+            }, 1000, this);
+        });
     </script>
 </body>
 
