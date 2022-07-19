@@ -10,26 +10,28 @@
 </head>
 
 <body>
-    <button>click</button>
-    <p>10</p>
+    <input type="text">
+    <p></p>
 
 
     <script>
-        let button = document.querySelector('button');
+        let input = document.querySelector('input');
         let parag = document.querySelector('p');
 
-        button.addEventListener('click', func);
+        input.addEventListener('blur', func);
 
         function func() {
-            button.removeEventListener('click', func);
+            parag.innerHTML = input.value;
             let timerID = setInterval(function () {
+                parag.innerHTML = +parag.innerHTML - 1;
                 if (+parag.innerHTML <= 0) {
                     clearInterval(timerID);
-                } else {
-                    parag.innerHTML = +parag.innerHTML - 1;
                 }
             }, 1000);
+
         }
+
+
     </script>
 </body>
 
