@@ -16,10 +16,9 @@
     <script>
         let parag = document.querySelector('p');
         
-        setInterval(function() {
-            let moment = new Date();
-            parag.innerHTML = moment.getHours() + ':' + moment.getMinutes() + ':' + moment.getSeconds();
-        }, 1000);
+        setTimeout(function() {
+            parag.innerHTML = 'some text added';
+        }, 3000);
         
 
     </script>
