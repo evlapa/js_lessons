@@ -10,22 +10,29 @@
 </head>
 
 <body>
-<button>start timer</button>
+<button id="start">start timer</button>
+<button id="stop">stop timer</button>
 
     <script>
-        let button = document.querySelector('button');
-        button.addEventListener('click', func);
+        let some = 100;
+        let startBut = document.querySelector('#start');
+        let stopBut = document.querySelector('#stop');
+        let timer;
 
-        function func() {
-            this.removeEventListener('click', func);
-            let some = 100;
-        let timerID = setInterval(function () {
-            console.log(some--);
-            if (some < 0) {
-                clearInterval(timerID);
-            }
-        }, 1000);
+        startBut.addEventListener('click', func1);
+        stopBut.addEventListener('click', func2);
+
+        function func1() {
+            startBut.removeEventListener('click', func1);
+            timer = setInterval(function() {
+                console.log(some--);
+                if (some < 0) {
+                    clearInterval(timer);
+                }
+            }, 1000);
         }
+
+        
     </script>
 </body>
 
