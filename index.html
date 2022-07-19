@@ -10,11 +10,22 @@
 </head>
 
 <body>
-    <input type="button" id="elem" value="10">
+   <button>click</button>
+   <p>30</p>
 
 
     <script>
-        
+      let button = document.querySelector('button');
+      let parag = document.querySelector('p');
+
+      button.addEventListener('click', func);
+
+      function func() {
+        button.removeEventListener('click', func);
+        setInterval(function() {
+            parag.innerHTML = +parag.innerHTML + 1;
+        }, 1000);
+      }
     </script>
 </body>
 
