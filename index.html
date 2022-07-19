@@ -11,16 +11,19 @@
 
 <body>
     <input type="text">
+    <button>click</button>
     <p></p>
 
 
     <script>
         let input = document.querySelector('input');
+        let button = document.querySelector('button');
         let parag = document.querySelector('p');
 
-        input.addEventListener('blur', func);
+        button.addEventListener('click', func);
 
         function func() {
+            button.removeEventListener('click', func);
             parag.innerHTML = input.value;
             let timerID = setInterval(function () {
                 parag.innerHTML = +parag.innerHTML - 1;
