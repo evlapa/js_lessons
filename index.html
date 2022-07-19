@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <input type="button" id="elem" value="10">
 
 
@@ -21,6 +22,24 @@
                 param.value--;
             }, 1000, this);
         });
+=======
+<button>start timer</button>
+
+    <script>
+        let button = document.querySelector('button');
+        button.addEventListener('click', func);
+
+        function func() {
+            this.removeEventListener('click', func);
+            let some = 100;
+        let timerID = setInterval(function () {
+            console.log(some--);
+            if (some < 0) {
+                clearInterval(timerID);
+            }
+        }, 1000);
+        }
+>>>>>>> parent of ec5876d... 250-1 in progress
     </script>
 </body>
 
