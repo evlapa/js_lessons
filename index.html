@@ -10,32 +10,17 @@
 </head>
 
 <body>
-    <p>1</p>
-    <button id="start">start</button>
-    <button id="stop">stop</button>
-
+    <p></p>
+    
 
     <script>
-        let start = document.querySelector('#start');
-        let stopButton = document.querySelector('#stop');
         let parag = document.querySelector('p');
-        let timerID;
-
-        start.addEventListener('click', func);
-        stopButton.addEventListener('click', func2);
-
-        function func() {
-            start.removeEventListener('click', func);
-            
-            timerID = setInterval(function () {
-                parag.innerHTML = +parag.innerHTML + 1;
-            }, 1000);
-        }
-
-        function func2() {
-            start.addEventListener('click', func);
-            clearInterval(timerID);
-        }
+        
+        setInterval(function() {
+            let moment = new Date();
+            parag.innerHTML = moment.getHours() + ':' + moment.getMinutes() + ':' + moment.getSeconds();
+        }, 1000);
+        
 
     </script>
 </body>
