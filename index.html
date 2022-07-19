@@ -10,30 +10,32 @@
 </head>
 
 <body>
-    <input type="text">
-    <button>click</button>
-    <p></p>
+    <p>1</p>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
 
 
     <script>
-        let input = document.querySelector('input');
-        let button = document.querySelector('button');
+        let start = document.querySelector('#start');
+        let stopButton = document.querySelector('#stop');
         let parag = document.querySelector('p');
+        let timerID;
 
-        button.addEventListener('click', func);
+        start.addEventListener('click', func);
+        stopButton.addEventListener('click', func2);
 
         function func() {
-            button.removeEventListener('click', func);
-            parag.innerHTML = input.value;
-            let timerID = setInterval(function () {
-                parag.innerHTML = +parag.innerHTML - 1;
-                if (+parag.innerHTML <= 0) {
-                    clearInterval(timerID);
-                }
+            start.removeEventListener('click', func);
+            
+            timerID = setInterval(function () {
+                parag.innerHTML = +parag.innerHTML + 1;
             }, 1000);
-
         }
 
+        function func2() {
+            start.addEventListener('click', func);
+            clearInterval(timerID);
+        }
 
     </script>
 </body>
