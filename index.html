@@ -24,23 +24,39 @@
     <table></table>
 
     <script>
-        let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+        let employees = [
+            {
+                name: 'employee1', age: 30, salary:
+                    400
+            },
+            {
+                name: 'employee2', age: 31, salary:
+                    500
+            },
+            {
+                name: 'employee3', age: 32, salary:
+                    600
+            },
+        ];
+
         let table = document.querySelector('table');
 
-        for (let subArr of arr) {
+        for (let person of employees) {
             let tr = document.createElement('tr');
             table.appendChild(tr);
-            for (let elem of subArr) {
-                let td = document.createElement('td');
-                tr.appendChild(td);
-                td.innerHTML = +elem * +elem;
-            }
 
+            let td1 = document.createElement('td');
+            tr.appendChild(td1);
+            td1.innerHTML = person.name;
+
+            let td2 = document.createElement('td');
+            tr.appendChild(td2);
+            td2.innerHTML = person.age;
+
+            let td3 = document.createElement('td');
+            tr.appendChild(td3);
+            td3.innerHTML = person.salary;
         }
-
-
-
-
     </script>
 </body>
 
