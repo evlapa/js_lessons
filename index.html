@@ -10,17 +10,22 @@
 </head>
 
 <body>
-    <ul id="elem"></ul>
+    <div></div>
+    <p></p>
 
     <script>
-        let list = document.querySelector('#elem');
+        let block = document.querySelector('div');
+        let parag = document.querySelector('p');
 
 
         function func() {
-            for (let i = 1; i <= 10; i++) {
-                let newLine = document.createElement('li');
-                newLine.innerHTML = i;
-                list.appendChild(newLine);
+            for (let i = 1; i <= 5; i++) {
+                let input = document.createElement('input');
+                input.type = 'text';
+                input.addEventListener('blur', function() {
+                    parag.innerHTML = this.value;
+                });
+                block.appendChild(input);
             }
         }
 
