@@ -10,26 +10,21 @@
 </head>
 
 <body>
-    <div></div>
-    <p></p>
+    <div id="parent"></div>
 
     <script>
-        let block = document.querySelector('div');
-        let parag = document.querySelector('p');
+        let parent = document.querySelector('#parent');
 
+        let arr = [1, 2, 3, 4, 5];
 
-        function func() {
-            for (let i = 1; i <= 5; i++) {
-                let input = document.createElement('input');
-                input.type = 'text';
-                input.addEventListener('blur', function() {
-                    parag.innerHTML = this.value;
-                });
-                block.appendChild(input);
-            }
+        for (let elem of arr) {
+            let p = document.createElement('p');
+            p.innerHTML = elem;
+            p.addEventListener('click', function() {
+                this.innerHTML = +this.innerHTML + 1;
+            });
+            parent.appendChild(p);
         }
-
-        func();
 
     </script>
 </body>
