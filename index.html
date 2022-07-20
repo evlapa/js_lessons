@@ -20,33 +20,24 @@
 </head>
 
 <body>
-    <input type="text" id="width" placeholder="table width">
-    <input type="text" id="height" placeholder="table height">
-    <button>generate table</button>
+
     <table></table>
 
     <script>
-        let tableWidth = document.querySelector('#width');
-        let tableHeight = document.querySelector('#height');
-        let button = document.querySelector('button');
+        let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
         let table = document.querySelector('table');
-        let k = 2;
 
-        button.addEventListener('click', func);
-
-        function func() {
-            button.removeEventListener('click', func);
-            for (let i = 0; i < (+tableHeight.value); i++) {
-                let tr = document.createElement('tr');
-                table.appendChild(tr);
-                for (let j = 0; j < (+tableWidth.value); j++) {
-                    let td = document.createElement('td');
-                    tr.appendChild(td);
-                    td.innerHTML = k;
-                    k += 2;
-                }
+        for (let subArr of arr) {
+            let tr = document.createElement('tr');
+            table.appendChild(tr);
+            for (let elem of subArr) {
+                let td = document.createElement('td');
+                tr.appendChild(td);
+                td.innerHTML = elem;
             }
+
         }
+
 
 
 
