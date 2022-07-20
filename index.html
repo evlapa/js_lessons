@@ -20,20 +20,32 @@
 </head>
 
 <body>
+    <input type="text" id="width" placeholder="table width">
+    <input type="text" id="height" placeholder="table height">
+    <button>generate table</button>
     <table></table>
 
     <script>
+        let tableWidth = document.querySelector('#width');
+        let tableHeight = document.querySelector('#height');
+        let button = document.querySelector('button');
         let table = document.querySelector('table');
 
-        for (let i = 0; i < 10; i++) {
-            let tr = document.createElement('tr');
-            table.appendChild(tr);
-            for (let j = 0; j < 5; j++) {
-                let td = document.createElement('td');
-                tr.appendChild(td);
-                td.innerHTML = 'x';
+        button.addEventListener('click', func);
+
+        function func() {
+            button.removeEventListener('click', func);
+            for (let i = 0; i < (+tableHeight.value); i++) {
+                let tr = document.createElement('tr');
+                table.appendChild(tr);
+                for (let j = 0; j < (+tableWidth.value); j++) {
+                    let td = document.createElement('td');
+                    tr.appendChild(td);
+                }
             }
         }
+
+
 
     </script>
 </body>
