@@ -21,25 +21,38 @@
 
 <body>
 
-    <table></table>
+    <table id="table">
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
     <button>add line</button>
 
     <script>
         let table = document.querySelector('table');
         let button = document.querySelector('button');
 
+
         button.addEventListener('click', func);
 
         function func() {
-            let tr = document.createElement('tr');
-            table.appendChild(tr);
-            for (let i = 0; i < 5; i++) {
-                let td = document.createElement('td');
-                tr.appendChild(td);
+            // let newTD = document.createElement('td');
+            let newTR = document.createElement('tr');
+            table.appendChild(newTR);
+            let trs = document.querySelectorAll('tr');
+            let tds = trs[0].querySelectorAll('td');
+            for (let i = 0; i < tds; i++) {
+                let newTD = document.createElement('td');
+                newTR.appendChild(newTD);
             }
         }
 
-        
+
     </script>
 </body>
 
