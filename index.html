@@ -21,6 +21,9 @@
             let newLine = document.createElement('li');
             newLine.innerHTML = 'пункт';
             list.appendChild(newLine);
+            newLine.addEventListener('click', function() {
+                newLine.innerHTML += '!';
+            });
         }
 
     </script>
