@@ -30,7 +30,7 @@
         let tableHeight = document.querySelector('#height');
         let button = document.querySelector('button');
         let table = document.querySelector('table');
-        let k = 1;
+        let k = 2;
 
         button.addEventListener('click', func);
 
@@ -43,7 +43,7 @@
                     let td = document.createElement('td');
                     tr.appendChild(td);
                     td.innerHTML = k;
-                    k++;
+                    k += 2;
                 }
             }
         }
