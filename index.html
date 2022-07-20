@@ -10,21 +10,21 @@
 </head>
 
 <body>
-    <ol id="elem"></ol>
-    <button id="button">click me</button>
+    <ul id="elem"></ul>
+
     <script>
         let list = document.querySelector('#elem');
-        let button = document.querySelector('button');
-        button.addEventListener('click', func);
+
 
         function func() {
-            let newLine = document.createElement('li');
-            newLine.innerHTML = 'пункт';
-            list.appendChild(newLine);
-            newLine.addEventListener('click', function() {
-                newLine.innerHTML += '!';
-            });
+            for (let i = 1; i <= 10; i++) {
+                let newLine = document.createElement('li');
+                newLine.innerHTML = i;
+                list.appendChild(newLine);
+            }
         }
+
+        func();
 
     </script>
 </body>
