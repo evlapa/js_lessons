@@ -11,11 +11,18 @@
 
 <body>
     <ol id="elem"></ol>
+    <button id="button">click me</button>
     <script>
         let list = document.querySelector('#elem');
-        let newLine = document.createElement('li');
-        newLine.innerHTML = 'пункт';
-        list.appendChild(newLine);
+        let button = document.querySelector('button');
+        button.addEventListener('click', func);
+
+        function func() {
+            let newLine = document.createElement('li');
+            newLine.innerHTML = 'пункт';
+            list.appendChild(newLine);
+        }
+
     </script>
 </body>
 
