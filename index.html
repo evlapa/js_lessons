@@ -30,6 +30,7 @@
         let tableHeight = document.querySelector('#height');
         let button = document.querySelector('button');
         let table = document.querySelector('table');
+        let k = 1;
 
         button.addEventListener('click', func);
 
@@ -41,6 +42,8 @@
                 for (let j = 0; j < (+tableWidth.value); j++) {
                     let td = document.createElement('td');
                     tr.appendChild(td);
+                    td.innerHTML = k;
+                    k++;
                 }
             }
         }
