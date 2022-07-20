@@ -52,6 +52,9 @@
             let td2 = document.createElement('td');
             tr.appendChild(td2);
             td2.innerHTML = person.age;
+            td2.addEventListener('click', function() {
+                td2.innerHTML = +td2.innerHTML + 1;
+            })
 
             let td3 = document.createElement('td');
             tr.appendChild(td3);
