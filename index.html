@@ -10,20 +10,16 @@
 </head>
 
 <body>
-    <div id="parent"></div>
+    <ul id="elem"></ul>
 
     <script>
-        let parent = document.querySelector('#parent');
-
+        let list = document.querySelector('#elem');
         let arr = [1, 2, 3, 4, 5];
 
         for (let elem of arr) {
-            let p = document.createElement('p');
-            p.innerHTML = elem;
-            p.addEventListener('click', function() {
-                this.innerHTML = +this.innerHTML + 1;
-            });
-            parent.appendChild(p);
+            let li = document.createElement('li');
+            li.innerHTML = elem;
+            list.appendChild(li);
         }
 
     </script>
