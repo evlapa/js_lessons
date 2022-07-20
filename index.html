@@ -10,18 +10,12 @@
 </head>
 
 <body>
-
+    <ol id="elem"></ol>
     <script>
-        let i = 0;
-
-        function timer() {
-            setTimeout(function () {
-                console.log(i++);
-                timer();
-            }, 1000);
-        } 
-
-        timer();
+        let list = document.querySelector('#elem');
+        let newLine = document.createElement('li');
+        newLine.innerHTML = 'пункт';
+        list.appendChild(newLine);
     </script>
 </body>
 
