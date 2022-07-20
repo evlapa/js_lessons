@@ -22,47 +22,24 @@
 <body>
 
     <table></table>
+    <button>add line</button>
 
     <script>
-        let employees = [
-            {
-                name: 'employee1', age: 30, salary:
-                    400
-            },
-            {
-                name: 'employee2', age: 31, salary:
-                    500
-            },
-            {
-                name: 'employee3', age: 32, salary:
-                    600
-            },
-        ];
-
         let table = document.querySelector('table');
+        let button = document.querySelector('button');
 
-        for (let person of employees) {
+        button.addEventListener('click', func);
+
+        function func() {
             let tr = document.createElement('tr');
             table.appendChild(tr);
-
-            let td1 = document.createElement('td');
-            tr.appendChild(td1);
-            td1.innerHTML = person.name;
-
-            let td2 = document.createElement('td');
-            tr.appendChild(td2);
-            td2.innerHTML = person.age;
-            td2.addEventListener('click', function() {
-                td2.innerHTML = +td2.innerHTML + 1;
-            })
-
-            let td3 = document.createElement('td');
-            tr.appendChild(td3);
-            td3.innerHTML = person.salary;
-            td3.addEventListener('click', function() {
-                td3.innerHTML = +td3.innerHTML + (0.1 * +td3.innerHTML);
-            })
+            for (let i = 0; i < 5; i++) {
+                let td = document.createElement('td');
+                tr.appendChild(td);
+            }
         }
+
+        
     </script>
 </body>
 
