@@ -41,14 +41,17 @@
         button.addEventListener('click', func);
 
         function func() {
-            // let newTD = document.createElement('td');
             let newTR = document.createElement('tr');
             table.appendChild(newTR);
             let trs = document.querySelectorAll('tr');
             let tds = trs[0].querySelectorAll('td');
-            for (let i = 0; i < tds; i++) {
+            for (let i = 0; i < tds.length; i++) {
                 let newTD = document.createElement('td');
                 newTR.appendChild(newTD);
+            }
+            for (let i = 0; i < trs.length; i++) {
+                let newTD = document.createElement('td');
+                trs[i].appendChild(newTD);
             }
         }
 
