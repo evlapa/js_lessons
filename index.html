@@ -21,24 +21,30 @@
 
 <body>
 
-    <ul id="elem"></ul>
+    <table id="table">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+
+    <button>click</button>
 
     <script>
-        let list = document.querySelector('#elem');
+        let button = document.querySelector('button');
 
-        let arr = [1, 2, 3, 4, 5];
+        button.addEventListener('click', function () {
+            let tds = document.querySelectorAll('td');
+            for (let td of tds) {
+                td.innerHTML = +td.innerHTML * 2;
+            }
+        })
 
-        for (let elem of arr) {
-            let li = document.createElement('li');
-            li.textContent = elem;
 
-            list.appendChild(li);
-
-            li.addEventListener('click', function func() {
-                this.innerHTML += '!';
-                li.removeEventListener('click', func);
-            });
-        }
 
     </script>
 </body>
