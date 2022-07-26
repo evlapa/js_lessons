@@ -33,6 +33,10 @@
             li.textContent = elem;
 
             list.appendChild(li);
+
+            li.addEventListener('click', function() {
+                console.log(this.innerHTML);
+            });
         }
 
     </script>
