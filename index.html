@@ -21,19 +21,11 @@
 
 <body>
 
-    <input type="text">
-
-    <button>click</button> 
+    <div id="elem" class="www"></div>
 
     <script>
-        let input = document.querySelector('input');
-
-        let button = document.querySelector('button'); 
-
-        button.addEventListener('click', function() {
-           input.insertAdjacentElement('afterEnd', input.cloneNode(true));
-        });
-       
+       let elem = document.querySelector('#elem');
+       console.log(elem.matches('p'));
         
     </script>
 </body>
