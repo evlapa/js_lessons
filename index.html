@@ -21,10 +21,10 @@
 
 <body>
 
-    <ul id="elem">
+    <ul id="parent">
         <li>text</li>
         <li>text</li>
-        <li>text</li>
+        <li id="elem">text</li>
         <li>text</li>
         <li>text</li>
     </ul>
@@ -32,18 +32,19 @@
     <button>click</button>
 
     <script>
-        let list = document.querySelector('#elem');
-        let start = document.createElement('li');
-        start.innerHTML = 'start';
-
-        let end = document.createElement('li');
-        end.innerHTML = 'finish';
+        let list = document.querySelector('#parent');
+        let elem = document.querySelector('#elem');
+        
+        let addedElem = document.createElement('li');
+        addedElem.innerHTML = 'new';
 
         let button = document.querySelector('button');
 
         button.addEventListener('click', function() {
-            list.append(end);
-            list.prepend(start);
+           list.insertBefore(addedElem, elem);
+           addedElem.addEventListener('click', function() {
+            addedElem.innerHTML += '!';
+           })
         });
        
         
