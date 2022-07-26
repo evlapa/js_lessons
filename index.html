@@ -21,21 +21,32 @@
 
 <body>
 
-    <ul id="parent">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
     </ul>
-    
-  <button id="button">remove</button>
+
+    <button>click</button>
 
     <script>
-        let list = document.querySelector('#parent');
-        let button = document.querySelector('#button');
-       
+        let list = document.querySelector('#elem');
+        let start = document.createElement('li');
+        start.innerHTML = 'start';
+
+        let end = document.createElement('li');
+        end.innerHTML = 'finish';
+
+        let button = document.querySelector('button');
+
         button.addEventListener('click', function() {
-            list.lastElementChild.remove();
+            list.append(end);
+            list.prepend(start);
         });
+       
+        
     </script>
 </body>
 
