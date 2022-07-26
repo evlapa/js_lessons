@@ -21,30 +21,17 @@
 
 <body>
 
-    <ul id="parent">
-        <li>text</li>
-        <li>text</li>
-        <li id="elem">text</li>
-        <li>text</li>
-        <li>text</li>
-    </ul>
+    <input type="text">
 
-    <button>click</button>
+    <button>click</button> 
 
     <script>
-        let list = document.querySelector('#parent');
-        let elem = document.querySelector('#elem');
-        
-        let addedElem = document.createElement('li');
-        addedElem.innerHTML = 'new';
+        let input = document.querySelector('input');
 
-        let button = document.querySelector('button');
+        let button = document.querySelector('button'); 
 
         button.addEventListener('click', function() {
-           list.insertBefore(addedElem, elem);
-           addedElem.addEventListener('click', function() {
-            addedElem.innerHTML += '!';
-           })
+           input.insertAdjacentElement('afterEnd', input.cloneNode(true));
         });
        
         
