@@ -34,8 +34,9 @@
 
             list.appendChild(li);
 
-            li.addEventListener('click', function() {
+            li.addEventListener('click', function func() {
                 this.innerHTML += '!';
+                li.removeEventListener('click', func);
             });
         }
 
