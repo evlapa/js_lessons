@@ -21,43 +21,12 @@
 
 <body>
 
-    <ul id="parent">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul>
-
-    <input type="submit" id="button">
+   <p>some text</p>
+   <div><a href="#">remove</a></div>
 
     <script>
-        let button = document.querySelector('#button');
-        let parent = document.querySelector('#parent');
-        let i = 4;
-
-        function selfRemoval() {
-            let items = document.querySelectorAll('li');
-            for (let item of items) {
-                item.addEventListener('click', function () {
-                    this.remove();
-                });
-            }
-        }
-
-        selfRemoval();
-
-
-        button.addEventListener('click', function () {
-            let li = document.createElement('li');
-            parent.appendChild(li);
-            li.innerHTML = i;
-            i++;
-            selfRemoval();
-        });
-
-
-
-
-
+       let p = document.querySelector('p');
+       
     </script>
 </body>
 
