@@ -21,28 +21,40 @@
 
 <body>
 
-    <table id="table">
-        <tr>
-            <td>1</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>4</td>
-        </tr>
-    </table>
+    <ul id="parent">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
 
-    <button>click</button>
+    <input type="submit" id="button">
 
     <script>
-        let button = document.querySelector('button');
+        let button = document.querySelector('#button');
+        let parent = document.querySelector('#parent');
+        let i = 4;
+
+        function selfRemoval() {
+            let items = document.querySelectorAll('li');
+            for (let item of items) {
+                item.addEventListener('click', function () {
+                    this.remove();
+                });
+            }
+        }
+
+        selfRemoval();
+
 
         button.addEventListener('click', function () {
-            let tds = document.querySelectorAll('td');
-            for (let td of tds) {
-                td.innerHTML = +td.innerHTML * 2;
-            }
-        })
+            let li = document.createElement('li');
+            parent.appendChild(li);
+            li.innerHTML = i;
+            i++;
+            selfRemoval();
+        });
+
+
 
 
 
