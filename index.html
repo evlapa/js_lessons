@@ -21,15 +21,23 @@
 
 <body>
 
-    <div id="elem1">
-        <p id="elem2"></p>
-    </div>
+    <div id="parent"></div>
 
     <script>
-        let elem1 = document.querySelector('#elem1');
-        let elem2 = document.querySelector('#elem2');
+        let parent = document.querySelector('#parent');
 
-        console.log(elem1.contains(elem2));
+        let arr = [1, 2, 3, 4, 5];
+
+        for (let elem of arr) {
+            let p = document.createElement('p');
+            p.textContent = elem;
+
+            parent.appendChild(p);
+
+            p.addEventListener('click', function() {
+                p.innerHTML = +p.innerHTML + 1;
+            });
+        }
 
     </script>
 </body>
