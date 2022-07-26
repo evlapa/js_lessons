@@ -21,22 +21,18 @@
 
 <body>
 
-    <div id="parent"></div>
+    <ul id="elem"></ul>
 
     <script>
-        let parent = document.querySelector('#parent');
+        let list = document.querySelector('#elem');
 
         let arr = [1, 2, 3, 4, 5];
 
         for (let elem of arr) {
-            let p = document.createElement('p');
-            p.textContent = elem;
+            let li = document.createElement('li');
+            li.textContent = elem;
 
-            parent.appendChild(p);
-
-            p.addEventListener('click', function() {
-                p.innerHTML = +p.innerHTML + 1;
-            });
+            list.appendChild(li);
         }
 
     </script>
